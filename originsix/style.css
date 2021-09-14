@@ -25,6 +25,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+ul {
+  list-style: none;
+}
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
@@ -37,7 +41,7 @@ body {
   width: 100%;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -58,6 +62,29 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a:hover::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: var(--base-color);
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
 }
 
 .logo {
@@ -94,6 +121,31 @@ nav {
   /*width: 96%; 'para minha tela de notebook' 100% para o curso*/
   margin: 0 1.5rem;
   /*border: solid red 2px;*/
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
 }
 
 #home {
@@ -160,5 +212,5 @@ nav {
 }
 
 main {
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + 2rem);
 }
