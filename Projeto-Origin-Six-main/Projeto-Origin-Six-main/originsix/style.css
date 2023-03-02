@@ -133,7 +133,7 @@ nav .menu {
   visibility: hidden;
 }
 
-/*parte que faz a página se "esconder"  */
+/*parte que faz a página se "esconder"*/
 nav.show .menu {
   opacity: 1;
   visibility: visible;
